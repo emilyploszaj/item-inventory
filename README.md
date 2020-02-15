@@ -13,7 +13,7 @@ repositories {
 And then to add Item Inventory you add it as a dependency in your build.gradle
 ```
 dependencies {
-	include "com.github.emilyploszaj:item-inventory:v1.0.0"
+	include "com.github.emilyploszaj:item-inventory:v1.1.0"
 }
 ```
 ## Implementing an ItemInventory

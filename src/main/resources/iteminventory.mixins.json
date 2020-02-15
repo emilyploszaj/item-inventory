@@ -1,11 +1,11 @@
 {
 	"required": true,
-	"package": "dev.emi.ttkb.mixin",
+	"package": "dev.emi.iteminventory.mixin",
 	"compatibilityLevel": "JAVA_8",
 	"mixins": [
+		"ItemsMixin"
 	],
 	"client": [
-		"ClientPlayerEntityMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
