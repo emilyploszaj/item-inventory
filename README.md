@@ -43,10 +43,10 @@ public class MyBackpack extends Item implements ItemInventory {
 	}
 
 	@Override
-    public default boolean canInsert(ItemStack invItem, int index, ItemStack stack) {
+	public default boolean canInsert(ItemStack invItem, int index, ItemStack stack) {
 		//Only allow unstackable items into the inventory
-        return canTake(invItem, index) && stack.getItem().getMaxCount() == 1;
-    }
+		return canTake(invItem, index) && stack.getItem().getMaxCount() == 1;
+	}
 }
 ```
 ## Using the API
@@ -60,12 +60,12 @@ public int getAmountOfItems(List<ItemStack> items) {
 		if (!stack.isEmpty()) {
 			amount++;
 
-			if (stack instanceof ItemInventory) {
+			if (stack.getItem() instanceof ItemInventory) {
 				List<ItemStack> innerStacks = new ArrayList<ItemStack>();
-				ItemInventory inv = (ItemInventory) stack;
+				ItemInventory inv = (ItemInventory) stack.getItem();
 
 				for (int j = 0; j < inv.getInvSize; j++) {
-					innerStacks.add(inv.getStack());
+					innerStacks.add(inv.getStack(stack, j));
 				}
 				amount += getAmountOfItems(innerStacks);
 			}
